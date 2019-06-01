@@ -1,3 +1,5 @@
+/*Purpose: Application allows users to search for videos. Uses Youtube API */
+
 import React from "react";
 
 import SearchBar from "./SearchBar";
@@ -8,10 +10,11 @@ import VideoDeail from "./VideoDetails";
 class App extends React.Component {
   state = { videos: [], selectedVideo: null };
 
+  //upon mounting, search default term
   componentDidMount() {
     this.onTermSubmit("learn React");
   }
-
+  //set up API
   onTermSubmit = async term => {
     const response = await youtube.get("/search", {
       params: {
@@ -24,6 +27,7 @@ class App extends React.Component {
     });
   };
 
+  //focus on selected video
   onVideoSelect = video => {
     this.setState({ selectedVideo: video });
   };
