@@ -1,6 +1,7 @@
 /*Purpose: Application allows users to search for videos. Uses Youtube API */
 
 import React from "react";
+import "./app.sass";
 
 import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube";
@@ -8,6 +9,7 @@ import VideoList from "./VideoList";
 import VideoDeail from "./VideoDetails";
 
 class App extends React.Component {
+  //initialize states
   state = { videos: [], selectedVideo: null };
 
   //upon mounting, search default term
